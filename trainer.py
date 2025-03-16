@@ -65,7 +65,7 @@ class Trainer:
                 self.model.train()
                 self.model.zero_grad()
                 #print("text_tokens", data['text_tokens'])
-                print("image", data['image'])
+                # print("image", data['image'])
                 x = (data['image'].to(self.device),
                      {k: v.to(self.device) for k, v in data['text_tokens'].items()})
                 y = data[self.label_key].to(self.device)

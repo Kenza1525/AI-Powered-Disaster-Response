@@ -1,0 +1,462 @@
+INFO:root:
+================Training Summary=================
+INFO:root:Training Summary: 
+INFO:root:Learning rate 0.002
+INFO:root:Batch size 32
+INFO:root:DataParallel(
+  (module): TextOnlyModel(
+    (dropout): Dropout(p=0.5, inplace=False)
+    (textEncoder): ElectraModel(
+      (embeddings): ElectraEmbeddings(
+        (word_embeddings): Embedding(30522, 768, padding_idx=0)
+        (position_embeddings): Embedding(512, 768)
+        (token_type_embeddings): Embedding(2, 768)
+        (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): ElectraEncoder(
+        (layer): ModuleList(
+          (0-11): 12 x ElectraLayer(
+            (attention): ElectraAttention(
+              (self): ElectraSelfAttention(
+                (query): Linear(in_features=768, out_features=768, bias=True)
+                (key): Linear(in_features=768, out_features=768, bias=True)
+                (value): Linear(in_features=768, out_features=768, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): ElectraSelfOutput(
+                (dense): Linear(in_features=768, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): ElectraIntermediate(
+              (dense): Linear(in_features=768, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): ElectraOutput(
+              (dense): Linear(in_features=3072, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+    (linear): Linear(in_features=768, out_features=6, bias=True)
+  )
+)
+INFO:root:
+=================================================
+INFO:root:Training iteration 0
+INFO:root:Finished 100 / 426 batches with loss: 0.04906884431838989, accuracy 0.3446875
+INFO:root:Finished 200 / 426 batches with loss: 0.04652152061462402, accuracy 0.390625
+INFO:root:Finished 300 / 426 batches with loss: 0.04625127792358399, accuracy 0.3740625
+INFO:root:Finished 400 / 426 batches with loss: 0.04551766753196716, accuracy 0.3871875
+INFO:root:=============Iteration 0=============
+INFO:root:Training accuracy 0.376984126984127
+INFO:root:Avg Training loss 0.04669152057430171
+INFO:root:Micro F1: 0.3770
+INFO:root:Macro F1: 0.1529
+INFO:root:Weighted F1: 0.2892
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.426911041573536
+INFO:root:Dev set loss 0.04276106428982799
+INFO:root:Micro F1: 0.4269
+INFO:root:Macro F1: 0.1933
+INFO:root:Weighted F1: 0.3511
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.4112650871703174
+INFO:root:Micro F1: 0.4113
+INFO:root:Macro F1: 0.1857
+INFO:root:Weighted F1: 0.3287
+INFO:root:Training iteration 1
+INFO:root:Finished 100 / 426 batches with loss: 0.044005104303359986, accuracy 0.41375
+INFO:root:Finished 200 / 426 batches with loss: 0.041837140917778015, accuracy 0.45375
+INFO:root:Finished 300 / 426 batches with loss: 0.04091827929019928, accuracy 0.475625
+INFO:root:Finished 400 / 426 batches with loss: 0.0467746502161026, accuracy 0.3671875
+INFO:root:=============Iteration 1=============
+INFO:root:Training accuracy 0.42379482657260437
+INFO:root:Avg Training loss 0.04366651988604151
+INFO:root:Micro F1: 0.4238
+INFO:root:Macro F1: 0.2273
+INFO:root:Weighted F1: 0.3763
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.39740724184175236
+INFO:root:Dev set loss 0.04666489013668464
+INFO:root:Micro F1: 0.3974
+INFO:root:Macro F1: 0.0948
+INFO:root:Weighted F1: 0.2260
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.3795261510952168
+INFO:root:Micro F1: 0.3795
+INFO:root:Macro F1: 0.0917
+INFO:root:Weighted F1: 0.2088
+INFO:root:Training iteration 2
+INFO:root:Finished 100 / 426 batches with loss: 0.04743123769760132, accuracy 0.3653125
+INFO:root:Finished 200 / 426 batches with loss: 0.04708171844482422, accuracy 0.383125
+INFO:root:Finished 300 / 426 batches with loss: 0.04554693818092346, accuracy 0.413125
+INFO:root:Finished 400 / 426 batches with loss: 0.03909784078598023, accuracy 0.505625
+INFO:root:=============Iteration 2=============
+INFO:root:Training accuracy 0.4246766607877719
+INFO:root:Avg Training loss 0.044363566737256284
+INFO:root:Micro F1: 0.4247
+INFO:root:Macro F1: 0.2184
+INFO:root:Weighted F1: 0.3609
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5301743406347788
+INFO:root:Dev set loss 0.03692572293773953
+INFO:root:Micro F1: 0.5302
+INFO:root:Macro F1: 0.3294
+INFO:root:Weighted F1: 0.5056
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5216808225301743
+INFO:root:Micro F1: 0.5217
+INFO:root:Macro F1: 0.3202
+INFO:root:Weighted F1: 0.4918
+INFO:root:Training iteration 3
+INFO:root:Finished 100 / 426 batches with loss: 0.03741210728883743, accuracy 0.523125
+INFO:root:Finished 200 / 426 batches with loss: 0.03733242720365524, accuracy 0.53125
+INFO:root:Finished 300 / 426 batches with loss: 0.03835819154977799, accuracy 0.5103125
+INFO:root:Finished 400 / 426 batches with loss: 0.03669021278619766, accuracy 0.5453125
+INFO:root:=============Iteration 3=============
+INFO:root:Training accuracy 0.5314520870076426
+INFO:root:Avg Training loss 0.037272338864384226
+INFO:root:Micro F1: 0.5315
+INFO:root:Macro F1: 0.3507
+INFO:root:Weighted F1: 0.5142
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5480554313813143
+INFO:root:Dev set loss 0.03605940243896225
+INFO:root:Micro F1: 0.5481
+INFO:root:Macro F1: 0.3972
+INFO:root:Weighted F1: 0.5433
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5341975860527493
+INFO:root:Micro F1: 0.5342
+INFO:root:Macro F1: 0.3812
+INFO:root:Weighted F1: 0.5254
+INFO:root:Training iteration 4
+INFO:root:Finished 100 / 426 batches with loss: 0.03597282111644745, accuracy 0.549375
+INFO:root:Finished 200 / 426 batches with loss: 0.03612639486789703, accuracy 0.5459375
+INFO:root:Finished 300 / 426 batches with loss: 0.03667005866765976, accuracy 0.54
+INFO:root:Finished 400 / 426 batches with loss: 0.035565699487924575, accuracy 0.57125
+INFO:root:=============Iteration 4=============
+INFO:root:Training accuracy 0.5544532627865961
+INFO:root:Avg Training loss 0.03595200287882263
+INFO:root:Micro F1: 0.5545
+INFO:root:Macro F1: 0.3912
+INFO:root:Weighted F1: 0.5423
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5641484130531963
+INFO:root:Dev set loss 0.03481935876578585
+INFO:root:Micro F1: 0.5641
+INFO:root:Macro F1: 0.4156
+INFO:root:Weighted F1: 0.5596
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.546714349575324
+INFO:root:Micro F1: 0.5467
+INFO:root:Macro F1: 0.4054
+INFO:root:Weighted F1: 0.5390
+INFO:root:Training iteration 5
+INFO:root:Finished 100 / 426 batches with loss: 0.03493322491645813, accuracy 0.57125
+INFO:root:Finished 200 / 426 batches with loss: 0.034621749967336655, accuracy 0.5596875
+INFO:root:Finished 300 / 426 batches with loss: 0.03535158038139343, accuracy 0.561875
+INFO:root:Finished 400 / 426 batches with loss: 0.03471639782190323, accuracy 0.5790625
+INFO:root:=============Iteration 5=============
+INFO:root:Training accuracy 0.5706202233980012
+INFO:root:Avg Training loss 0.034835338697652124
+INFO:root:Micro F1: 0.5706
+INFO:root:Macro F1: 0.4159
+INFO:root:Weighted F1: 0.5611
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.573088958426464
+INFO:root:Dev set loss 0.034748556068234536
+INFO:root:Micro F1: 0.5731
+INFO:root:Macro F1: 0.4305
+INFO:root:Weighted F1: 0.5704
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5462673223066608
+INFO:root:Micro F1: 0.5463
+INFO:root:Macro F1: 0.4115
+INFO:root:Weighted F1: 0.5406
+INFO:root:Training iteration 6
+INFO:root:Finished 100 / 426 batches with loss: 0.03368900671601296, accuracy 0.5871875
+INFO:root:Finished 200 / 426 batches with loss: 0.03384418353438377, accuracy 0.58
+INFO:root:Finished 300 / 426 batches with loss: 0.034758480191230776, accuracy 0.57125
+INFO:root:Finished 400 / 426 batches with loss: 0.034036655575037, accuracy 0.58375
+INFO:root:=============Iteration 6=============
+INFO:root:Training accuracy 0.5833333333333334
+INFO:root:Avg Training loss 0.0339643933505328
+INFO:root:Micro F1: 0.5833
+INFO:root:Macro F1: 0.4388
+INFO:root:Weighted F1: 0.5757
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5815824765310684
+INFO:root:Dev set loss 0.03410970775687806
+INFO:root:Micro F1: 0.5816
+INFO:root:Macro F1: 0.4293
+INFO:root:Weighted F1: 0.5707
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5596781403665624
+INFO:root:Micro F1: 0.5597
+INFO:root:Macro F1: 0.4123
+INFO:root:Weighted F1: 0.5440
+INFO:root:Training iteration 7
+INFO:root:Finished 100 / 426 batches with loss: 0.03267473317682743, accuracy 0.6046875
+INFO:root:Finished 200 / 426 batches with loss: 0.033150030374526976, accuracy 0.595
+INFO:root:Finished 300 / 426 batches with loss: 0.0341490027308464, accuracy 0.5759375
+INFO:root:Finished 400 / 426 batches with loss: 0.03302174896001816, accuracy 0.61
+INFO:root:=============Iteration 7=============
+INFO:root:Training accuracy 0.5983245149911817
+INFO:root:Avg Training loss 0.03316751798764879
+INFO:root:Micro F1: 0.5983
+INFO:root:Macro F1: 0.4580
+INFO:root:Weighted F1: 0.5919
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5851586946803755
+INFO:root:Dev set loss 0.03420021092193597
+INFO:root:Micro F1: 0.5852
+INFO:root:Macro F1: 0.4418
+INFO:root:Weighted F1: 0.5804
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.562807331247206
+INFO:root:Micro F1: 0.5628
+INFO:root:Macro F1: 0.4274
+INFO:root:Weighted F1: 0.5547
+INFO:root:Training iteration 8
+INFO:root:Finished 100 / 426 batches with loss: 0.03239020749926567, accuracy 0.6053125
+INFO:root:Finished 200 / 426 batches with loss: 0.032657508701086045, accuracy 0.6053125
+INFO:root:Finished 300 / 426 batches with loss: 0.03366731718182564, accuracy 0.59
+INFO:root:Finished 400 / 426 batches with loss: 0.03236659213900566, accuracy 0.61375
+INFO:root:=============Iteration 8=============
+INFO:root:Training accuracy 0.6045708406819518
+INFO:root:Avg Training loss 0.03268138038488362
+INFO:root:Micro F1: 0.6046
+INFO:root:Macro F1: 0.4633
+INFO:root:Weighted F1: 0.5979
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5842646401430487
+INFO:root:Dev set loss 0.03430824792433062
+INFO:root:Micro F1: 0.5843
+INFO:root:Macro F1: 0.4425
+INFO:root:Weighted F1: 0.5795
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5637013857845329
+INFO:root:Micro F1: 0.5637
+INFO:root:Macro F1: 0.4240
+INFO:root:Weighted F1: 0.5545
+INFO:root:Training iteration 9
+INFO:root:Finished 100 / 426 batches with loss: 0.031542611122131345, accuracy 0.61875
+INFO:root:Finished 200 / 426 batches with loss: 0.03179759554564953, accuracy 0.60875
+INFO:root:Finished 300 / 426 batches with loss: 0.03288664475083351, accuracy 0.5971875
+INFO:root:Finished 400 / 426 batches with loss: 0.032003001868724824, accuracy 0.6225
+INFO:root:=============Iteration 9=============
+INFO:root:Training accuracy 0.61331569664903
+INFO:root:Avg Training loss 0.03198509204745082
+INFO:root:Micro F1: 0.6133
+INFO:root:Macro F1: 0.4774
+INFO:root:Weighted F1: 0.6077
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5869468037550291
+INFO:root:Dev set loss 0.034452169187696696
+INFO:root:Micro F1: 0.5869
+INFO:root:Macro F1: 0.4456
+INFO:root:Weighted F1: 0.5801
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5721949038891372
+INFO:root:Micro F1: 0.5722
+INFO:root:Macro F1: 0.4272
+INFO:root:Weighted F1: 0.5600
+INFO:root:Training iteration 10
+INFO:root:Finished 100 / 426 batches with loss: 0.03108757071197033, accuracy 0.626875
+INFO:root:Finished 200 / 426 batches with loss: 0.03131075918674469, accuracy 0.61375
+INFO:root:Finished 300 / 426 batches with loss: 0.03245471268892288, accuracy 0.6034375
+INFO:root:Finished 400 / 426 batches with loss: 0.031386009529232976, accuracy 0.6303125
+INFO:root:=============Iteration 10=============
+INFO:root:Training accuracy 0.6209582598471487
+INFO:root:Avg Training loss 0.03145088251025308
+INFO:root:Micro F1: 0.6210
+INFO:root:Macro F1: 0.4801
+INFO:root:Weighted F1: 0.6153
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5824765310683951
+INFO:root:Dev set loss 0.03452680701915313
+INFO:root:Micro F1: 0.5825
+INFO:root:Macro F1: 0.4341
+INFO:root:Weighted F1: 0.5726
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5681716584711668
+INFO:root:Micro F1: 0.5682
+INFO:root:Macro F1: 0.4224
+INFO:root:Weighted F1: 0.5544
+INFO:root:Training iteration 11
+INFO:root:Finished 100 / 426 batches with loss: 0.030184015333652496, accuracy 0.6359375
+INFO:root:Finished 200 / 426 batches with loss: 0.03078766703605652, accuracy 0.6296875
+INFO:root:Finished 300 / 426 batches with loss: 0.03167505942285061, accuracy 0.6128125
+INFO:root:Finished 400 / 426 batches with loss: 0.030658116713166237, accuracy 0.63875
+INFO:root:=============Iteration 11=============
+INFO:root:Training accuracy 0.6316137566137566
+INFO:root:Avg Training loss 0.03071873505840156
+INFO:root:Micro F1: 0.6316
+INFO:root:Macro F1: 0.4899
+INFO:root:Weighted F1: 0.6264
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5780062583817613
+INFO:root:Dev set loss 0.03509918472092227
+INFO:root:Micro F1: 0.5780
+INFO:root:Macro F1: 0.4368
+INFO:root:Weighted F1: 0.5737
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.556995976754582
+INFO:root:Micro F1: 0.5570
+INFO:root:Macro F1: 0.4224
+INFO:root:Weighted F1: 0.5496
+INFO:root:Training iteration 12
+INFO:root:Finished 100 / 426 batches with loss: 0.029793304577469825, accuracy 0.6440625
+INFO:root:Finished 200 / 426 batches with loss: 0.030062523558735847, accuracy 0.6328125
+INFO:root:Finished 300 / 426 batches with loss: 0.031028529182076454, accuracy 0.62375
+INFO:root:Finished 400 / 426 batches with loss: 0.030145015493035318, accuracy 0.6390625
+INFO:root:=============Iteration 12=============
+INFO:root:Training accuracy 0.637419165196943
+INFO:root:Avg Training loss 0.030162607849099788
+INFO:root:Micro F1: 0.6374
+INFO:root:Macro F1: 0.4984
+INFO:root:Weighted F1: 0.6322
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5847116674117121
+INFO:root:Dev set loss 0.03496913266171288
+INFO:root:Micro F1: 0.5847
+INFO:root:Macro F1: 0.4381
+INFO:root:Weighted F1: 0.5776
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.562807331247206
+INFO:root:Micro F1: 0.5628
+INFO:root:Macro F1: 0.4189
+INFO:root:Weighted F1: 0.5506
+INFO:root:Training iteration 13
+INFO:root:Finished 100 / 426 batches with loss: 0.029234872981905937, accuracy 0.656875
+INFO:root:Finished 200 / 426 batches with loss: 0.028852187544107438, accuracy 0.6509375
+INFO:root:Finished 300 / 426 batches with loss: 0.029582001082599164, accuracy 0.6415625
+INFO:root:Finished 400 / 426 batches with loss: 0.0286114339530468, accuracy 0.6603125
+INFO:root:=============Iteration 13=============
+INFO:root:Training accuracy 0.6552763080540859
+INFO:root:Avg Training loss 0.028945154867965568
+INFO:root:Micro F1: 0.6553
+INFO:root:Macro F1: 0.5145
+INFO:root:Weighted F1: 0.6502
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5797943674564149
+INFO:root:Dev set loss 0.035372427733391054
+INFO:root:Micro F1: 0.5798
+INFO:root:Macro F1: 0.4476
+INFO:root:Weighted F1: 0.5805
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5534197586052749
+INFO:root:Micro F1: 0.5534
+INFO:root:Macro F1: 0.4252
+INFO:root:Weighted F1: 0.5513
+INFO:root:Training iteration 14
+INFO:root:Finished 100 / 426 batches with loss: 0.028733791187405586, accuracy 0.6621875
+INFO:root:Finished 200 / 426 batches with loss: 0.028714781664311885, accuracy 0.66
+INFO:root:Finished 300 / 426 batches with loss: 0.02951243005692959, accuracy 0.6471875
+INFO:root:Finished 400 / 426 batches with loss: 0.028455065935850142, accuracy 0.6646875
+INFO:root:=============Iteration 14=============
+INFO:root:Training accuracy 0.6604203409758965
+INFO:root:Avg Training loss 0.028740797697761913
+INFO:root:Micro F1: 0.6604
+INFO:root:Macro F1: 0.5202
+INFO:root:Weighted F1: 0.6556
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.5797943674564149
+INFO:root:Dev set loss 0.03530140641442249
+INFO:root:Micro F1: 0.5798
+INFO:root:Macro F1: 0.4468
+INFO:root:Weighted F1: 0.5805
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.556995976754582
+INFO:root:Micro F1: 0.5570
+INFO:root:Macro F1: 0.4278
+INFO:root:Weighted F1: 0.5542
+INFO:root:Training iteration 15
+INFO:root:Finished 100 / 426 batches with loss: 0.02831169605255127, accuracy 0.6571875
+INFO:root:Finished 200 / 426 batches with loss: 0.028456297293305396, accuracy 0.6596875
+INFO:root:Finished 300 / 426 batches with loss: 0.02955093391239643, accuracy 0.645
+INFO:root:Finished 400 / 426 batches with loss: 0.028447234854102135, accuracy 0.6703125
+INFO:root:=============Iteration 15=============
+INFO:root:Training accuracy 0.6596854791299236
+INFO:root:Avg Training loss 0.028584029063415974
+INFO:root:Micro F1: 0.6597
+INFO:root:Macro F1: 0.5219
+INFO:root:Weighted F1: 0.6548
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.581135449262405
+INFO:root:Dev set loss 0.03527522513415593
+INFO:root:Micro F1: 0.5811
+INFO:root:Macro F1: 0.4486
+INFO:root:Weighted F1: 0.5813
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.5534197586052749
+INFO:root:Micro F1: 0.5534
+INFO:root:Macro F1: 0.4253
+INFO:root:Weighted F1: 0.5502
+INFO:root:Training iteration 16
+INFO:root:Finished 100 / 426 batches with loss: 0.028158009350299835, accuracy 0.6571875
+INFO:root:Finished 200 / 426 batches with loss: 0.028451890908181666, accuracy 0.656875
+INFO:root:Finished 300 / 426 batches with loss: 0.029174813702702522, accuracy 0.645
+INFO:root:Finished 400 / 426 batches with loss: 0.02837087884545326, accuracy 0.66875
+INFO:root:=============Iteration 16=============
+INFO:root:Training accuracy 0.6593180482069371
+INFO:root:Avg Training loss 0.028418284481164638
+INFO:root:Micro F1: 0.6593
+INFO:root:Macro F1: 0.5209
+INFO:root:Weighted F1: 0.6547
+INFO:root:Saving model...

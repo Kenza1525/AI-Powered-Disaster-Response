@@ -71,30 +71,30 @@ def preprocess_batch_bert(sentences):
     sample_tokens = [bert_tokenizer.tokenize(clean_text(s)) for s in sentences]
     full_tokens = [['[CLS]'] + st + ['[SEP]'] for st in sample_tokens]
     sent_lengths = [len(tokens) for tokens in full_tokens]
-    print(" Tokens are \n {} ".format(full_tokens[:5]))
-    print("Average token length: {}".format(
-        sum([len(ft) for ft in full_tokens]) / len(full_tokens)))
+    # print(" Tokens are \n {} ".format(full_tokens[:5]))
+    # print("Average token length: {}".format(
+        # sum([len(ft) for ft in full_tokens]) / len(full_tokens)))
     max_width = min(40, max([len(ft) for ft in full_tokens]))
-    print("Max token length: {}".format(max_width))
+    # print("Max token length: {}".format(max_width))
 
     padded_tokens = [
         ft[:max_width] + ['[PAD]' for _ in range(max_width-len(ft))] for ft in full_tokens]
-    print("Padded tokens are \n {} ".format(padded_tokens[:5]))
+    # print("Padded tokens are \n {} ".format(padded_tokens[:5]))
     attn_mask = [[1 if token != '[PAD]' else 0 for token in pt]
                  for pt in padded_tokens]
-    print("Attention Mask are \n {} ".format(attn_mask[:5]))
+    # print("Attention Mask are \n {} ".format(attn_mask[:5]))
 
     seg_ids = [[0 for _ in range(len(pt))] for pt in padded_tokens]
-    print("Segment Tokens are \n {}".format(seg_ids[:5]))
+    # print("Segment Tokens are \n {}".format(seg_ids[:5]))
 
     sent_ids = [bert_tokenizer.convert_tokens_to_ids(
         pt) for pt in padded_tokens]
-    print("sentence indexes \n {} ".format(sent_ids[:5]))
+    # print("sentence indexes \n {} ".format(sent_ids[:5]))
     vocab = set()
     for sent in sent_ids:
         for w in sent:
             vocab.add(w)
-    print("Size of the vocabulary is: {}".format(len(vocab)))
+    # print("Size of the vocabulary is: {}".format(len(vocab)))
     token_ids = torch.tensor(sent_ids)
     attn_mask = torch.tensor(attn_mask)
     seg_ids = torch.tensor(seg_ids)

@@ -66,39 +66,90 @@ labels_task3 = {
 
 class CrisisMMDataset(BaseDataset):
 
+    # def read_data(self, ann_file):
+    #     with open(ann_file, encoding='utf-8') as f:
+    #         self.info = f.readlines()[1:]
+
+    #     self.data_list = []
+
+    #     for l in self.info:
+    #         l = l.rstrip('\n')
+    #         #	Generate final_text first from the wiki.py. Check the code of wiki.py and run according to the dataset.
+
+    #         event_name, tweet_id, image_id, tweet_text,	image,	label,	label_text, label_image, label_text_image,final_text = l.split(
+    #             '\t')
+
+    #         if self.consistent_only and label_text != label_image:
+    #             continue
+    #         #print(trigger_words)
+    #         self.data_list.append(
+    #             {
+    #                 'path_image': '%s/%s' % (self.dataset_root, image),
+
+    #                 'text': final_text,
+    #                 'text_tokens': self.tokenize(final_text),
+
+    #                 'label_str': label,
+    #                 'label': self.label_map[label],
+
+    #                 'label_image_str': label,
+    #                 'label_image': self.label_map[label],
+
+    #                 'label_text_str': label,
+    #                 'label_text': self.label_map[label]
+    #             }
+    #         )
     def read_data(self, ann_file):
         with open(ann_file, encoding='utf-8') as f:
-            self.info = f.readlines()[1:]
+            self.info = f.readlines()[1:]  # Skip the header row
 
         self.data_list = []
 
         for l in self.info:
             l = l.rstrip('\n')
-            #	Generate final_text first from the wiki.py. Check the code of wiki.py and run according to the dataset.
+            fields = l.split('\t')
 
-            event_name, tweet_id, image_id, tweet_text,	image,	label,	label_text, label_image, label_text_image, final_text = l.split(
-                '\t')
+            if len(fields) == 10:  # Standard format for Task 1 & Task 2
+                event_name, tweet_id, image_id, tweet_text, image, label, label_text, label_image, label_text_image, final_text = fields
+            elif len(fields) == 7:  # Format for Task 3
+                event_name, tweet_id, image_id, tweet_text, image, label, final_text = fields
+                # label_text, label_image, label_text_image = None, None, None  # Leave these as None for Task 3
+                label_text, label_image, label_text_image = "", "", ""  # Leave these as None for Task 3
+            else:
+                print(f"Unexpected number of fields ({len(fields)}) in file: {ann_file}")
+                continue  # Skip problematic lines
 
-            if self.consistent_only and label_text != label_image:
-                continue
-            #print(trigger_words)
+            # self.data_list.append(
+            #     {
+            #         'path_image': f'{self.dataset_root}/{image}',
+            #         'text': final_text,
+            #         'text_tokens': self.tokenize(final_text),
+            #         'label_str': label,
+            #         'label': self.label_map[label],
+            #         'label_text_str': label_text,
+            #         'label_text': self.label_map[label] if label_text else "",  # Handle missing labels
+            #         'label_image_str': label_image,
+            #         'label_image': self.label_map[label] if label_image else "",
+            #         'label_text_image_str': label_text_image,
+            #         'label_text_image': self.label_map[label] if label_text_image else ""
+            #     }
+            # )
             self.data_list.append(
-                {
-                    'path_image': '%s/%s' % (self.dataset_root, image),
+                    {
+                        'path_image': f'{self.dataset_root}/{image}',
+                        'text': final_text,
+                        'text_tokens': self.tokenize(final_text),
+                        'label_str': label,
+                        'label': torch.tensor(self.label_map[label], dtype=torch.long),  # Ensure label is tensor
+                        'label_text_str': label_text,
+                        'label_text': torch.tensor(self.label_map[label], dtype=torch.long) if label_text != "" else torch.tensor(self.label_map[label], dtype=torch.long),  # Convert to tensor
+                        'label_image_str': label_image,
+                        'label_image': torch.tensor(self.label_map[label], dtype=torch.long) if label_image != "" else torch.tensor(self.label_map[label], dtype=torch.long),
+                        'label_text_image_str': label_text_image,
+                        'label_text_image': torch.tensor(self.label_map[label], dtype=torch.long) if label_text_image != "" else torch.tensor(self.label_map[label], dtype=torch.long)
+                    }
+                )
 
-                    'text': final_text,
-                    'text_tokens': self.tokenize(final_text),
-
-                    'label_str': label,
-                    'label': self.label_map[label],
-
-                    'label_image_str': label,
-                    'label_image': self.label_map[label],
-
-                    'label_text_str': label,
-                    'label_text': self.label_map[label]
-                }
-            )
 
     def tokenize(self, sentence):
         ids = self.tokenizer(clean_text(

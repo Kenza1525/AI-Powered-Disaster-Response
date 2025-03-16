@@ -24,3 +24,4 @@ To cite the paper:
 ## Run the model
 * Setup the environemnt and download the dataset using script  `bash setup.sh`
 * Run the pipeline with `bash train_debug.sh`
+tensorboard --logdir=runs/Mar15_16-43-20_v009.ib.bridges2.psc.edu --port=41225

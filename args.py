@@ -7,7 +7,7 @@ def get_args():
 
     # -------------- Important configs --------------- #
     parser.add_argument('--mode', choices=['both', 'image_only', 'text_only'], default='both')
-    parser.add_argument('--task', choices=['task1', 'task2', 'task2_merged'], default='task1')
+    parser.add_argument('--task', choices=['task1', 'task2', 'task3'], default='task1')
     parser.add_argument('--learning_rate', default=2e-3, type=float)
     parser.add_argument('--batch_size', default=64, type=int)
     parser.add_argument('--save_dir', default='./output', type=str)

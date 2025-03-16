@@ -6,6 +6,7 @@ import re
 import wikipedia
 from tqdm import tqdm
 import pickle
+import sys
 
 input_file = sys.argv[1]
 output_file = sys.argv[2]
@@ -27,11 +28,11 @@ informative_train_df['final_text'] = informative_train_df['tweet_text']+ informa
 #informative_train_df['tweet_text'][2]
 
 def final_wiki_text(text):
-    #IP_ADDRESS = "https://rel-entity-linker.d4science.org/"
+    IP_ADDRESS = "https://rel-entity-linker.d4science.org/"
     entities= []
     wiki_entities=[]
     final_wiki_tags=[]
-    tagme.GCUBE_TOKEN = '<add tagme token>'
+    tagme.GCUBE_TOKEN = 'e1396127-8f06-4d96-b917-efff2555e0f5-843339462'
     annotations = tagme.annotate(text)
 
     # Print annotations with a score higher than 0.1

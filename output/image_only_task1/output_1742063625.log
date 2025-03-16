@@ -1,0 +1,3084 @@
+INFO:root:
+================Training Summary=================
+INFO:root:Training Summary: 
+INFO:root:Learning rate 0.002
+INFO:root:Batch size 32
+INFO:root:DataParallel(
+  (module): ImageOnlyModel(
+    (imageEncoder): DenseNet(
+      (features): Sequential(
+        (conv0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+        (norm0): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu0): ReLU(inplace=True)
+        (pool0): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+        (denseblock1): _DenseBlock(
+          (denselayer1): _DenseLayer(
+            (norm1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer2): _DenseLayer(
+            (norm1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(96, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer3): _DenseLayer(
+            (norm1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer4): _DenseLayer(
+            (norm1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer5): _DenseLayer(
+            (norm1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer6): _DenseLayer(
+            (norm1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(224, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+        )
+        (transition1): _Transition(
+          (norm): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+          (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        )
+        (denseblock2): _DenseBlock(
+          (denselayer1): _DenseLayer(
+            (norm1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer2): _DenseLayer(
+            (norm1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer3): _DenseLayer(
+            (norm1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer4): _DenseLayer(
+            (norm1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(224, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer5): _DenseLayer(
+            (norm1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer6): _DenseLayer(
+            (norm1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(288, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer7): _DenseLayer(
+            (norm1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(320, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer8): _DenseLayer(
+            (norm1): BatchNorm2d(352, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(352, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer9): _DenseLayer(
+            (norm1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer10): _DenseLayer(
+            (norm1): BatchNorm2d(416, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(416, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer11): _DenseLayer(
+            (norm1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(448, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer12): _DenseLayer(
+            (norm1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(480, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+        )
+        (transition2): _Transition(
+          (norm): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+          (conv): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        )
+        (denseblock3): _DenseBlock(
+          (denselayer1): _DenseLayer(
+            (norm1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer2): _DenseLayer(
+            (norm1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(288, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer3): _DenseLayer(
+            (norm1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(320, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer4): _DenseLayer(
+            (norm1): BatchNorm2d(352, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(352, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer5): _DenseLayer(
+            (norm1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer6): _DenseLayer(
+            (norm1): BatchNorm2d(416, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(416, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer7): _DenseLayer(
+            (norm1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(448, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer8): _DenseLayer(
+            (norm1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(480, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer9): _DenseLayer(
+            (norm1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer10): _DenseLayer(
+            (norm1): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(544, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer11): _DenseLayer(
+            (norm1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer12): _DenseLayer(
+            (norm1): BatchNorm2d(608, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(608, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer13): _DenseLayer(
+            (norm1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(640, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer14): _DenseLayer(
+            (norm1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(672, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer15): _DenseLayer(
+            (norm1): BatchNorm2d(704, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(704, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer16): _DenseLayer(
+            (norm1): BatchNorm2d(736, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(736, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer17): _DenseLayer(
+            (norm1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(768, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer18): _DenseLayer(
+            (norm1): BatchNorm2d(800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(800, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer19): _DenseLayer(
+            (norm1): BatchNorm2d(832, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(832, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer20): _DenseLayer(
+            (norm1): BatchNorm2d(864, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(864, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer21): _DenseLayer(
+            (norm1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(896, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer22): _DenseLayer(
+            (norm1): BatchNorm2d(928, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(928, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer23): _DenseLayer(
+            (norm1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(960, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer24): _DenseLayer(
+            (norm1): BatchNorm2d(992, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(992, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer25): _DenseLayer(
+            (norm1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1024, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer26): _DenseLayer(
+            (norm1): BatchNorm2d(1056, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1056, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer27): _DenseLayer(
+            (norm1): BatchNorm2d(1088, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1088, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer28): _DenseLayer(
+            (norm1): BatchNorm2d(1120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1120, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer29): _DenseLayer(
+            (norm1): BatchNorm2d(1152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1152, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer30): _DenseLayer(
+            (norm1): BatchNorm2d(1184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1184, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer31): _DenseLayer(
+            (norm1): BatchNorm2d(1216, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1216, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer32): _DenseLayer(
+            (norm1): BatchNorm2d(1248, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1248, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer33): _DenseLayer(
+            (norm1): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1280, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer34): _DenseLayer(
+            (norm1): BatchNorm2d(1312, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1312, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer35): _DenseLayer(
+            (norm1): BatchNorm2d(1344, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1344, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer36): _DenseLayer(
+            (norm1): BatchNorm2d(1376, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1376, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer37): _DenseLayer(
+            (norm1): BatchNorm2d(1408, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1408, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer38): _DenseLayer(
+            (norm1): BatchNorm2d(1440, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1440, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer39): _DenseLayer(
+            (norm1): BatchNorm2d(1472, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1472, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer40): _DenseLayer(
+            (norm1): BatchNorm2d(1504, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1504, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer41): _DenseLayer(
+            (norm1): BatchNorm2d(1536, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1536, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer42): _DenseLayer(
+            (norm1): BatchNorm2d(1568, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1568, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer43): _DenseLayer(
+            (norm1): BatchNorm2d(1600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1600, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer44): _DenseLayer(
+            (norm1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1632, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer45): _DenseLayer(
+            (norm1): BatchNorm2d(1664, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1664, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer46): _DenseLayer(
+            (norm1): BatchNorm2d(1696, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1696, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer47): _DenseLayer(
+            (norm1): BatchNorm2d(1728, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1728, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer48): _DenseLayer(
+            (norm1): BatchNorm2d(1760, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1760, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+        )
+        (transition3): _Transition(
+          (norm): BatchNorm2d(1792, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+          (conv): Conv2d(1792, 896, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+        )
+        (denseblock4): _DenseBlock(
+          (denselayer1): _DenseLayer(
+            (norm1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(896, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer2): _DenseLayer(
+            (norm1): BatchNorm2d(928, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(928, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer3): _DenseLayer(
+            (norm1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(960, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer4): _DenseLayer(
+            (norm1): BatchNorm2d(992, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(992, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer5): _DenseLayer(
+            (norm1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1024, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer6): _DenseLayer(
+            (norm1): BatchNorm2d(1056, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1056, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer7): _DenseLayer(
+            (norm1): BatchNorm2d(1088, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1088, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer8): _DenseLayer(
+            (norm1): BatchNorm2d(1120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1120, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer9): _DenseLayer(
+            (norm1): BatchNorm2d(1152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1152, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer10): _DenseLayer(
+            (norm1): BatchNorm2d(1184, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1184, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer11): _DenseLayer(
+            (norm1): BatchNorm2d(1216, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1216, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer12): _DenseLayer(
+            (norm1): BatchNorm2d(1248, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1248, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer13): _DenseLayer(
+            (norm1): BatchNorm2d(1280, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1280, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer14): _DenseLayer(
+            (norm1): BatchNorm2d(1312, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1312, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer15): _DenseLayer(
+            (norm1): BatchNorm2d(1344, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1344, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer16): _DenseLayer(
+            (norm1): BatchNorm2d(1376, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1376, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer17): _DenseLayer(
+            (norm1): BatchNorm2d(1408, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1408, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer18): _DenseLayer(
+            (norm1): BatchNorm2d(1440, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1440, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer19): _DenseLayer(
+            (norm1): BatchNorm2d(1472, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1472, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer20): _DenseLayer(
+            (norm1): BatchNorm2d(1504, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1504, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer21): _DenseLayer(
+            (norm1): BatchNorm2d(1536, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1536, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer22): _DenseLayer(
+            (norm1): BatchNorm2d(1568, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1568, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer23): _DenseLayer(
+            (norm1): BatchNorm2d(1600, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1600, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer24): _DenseLayer(
+            (norm1): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1632, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer25): _DenseLayer(
+            (norm1): BatchNorm2d(1664, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1664, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer26): _DenseLayer(
+            (norm1): BatchNorm2d(1696, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1696, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer27): _DenseLayer(
+            (norm1): BatchNorm2d(1728, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1728, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer28): _DenseLayer(
+            (norm1): BatchNorm2d(1760, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1760, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer29): _DenseLayer(
+            (norm1): BatchNorm2d(1792, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1792, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer30): _DenseLayer(
+            (norm1): BatchNorm2d(1824, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1824, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer31): _DenseLayer(
+            (norm1): BatchNorm2d(1856, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1856, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+          (denselayer32): _DenseLayer(
+            (norm1): BatchNorm2d(1888, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu1): ReLU(inplace=True)
+            (conv1): Conv2d(1888, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (relu2): ReLU(inplace=True)
+            (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          )
+        )
+        (norm5): BatchNorm2d(1920, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (classifier): Linear(in_features=1920, out_features=1000, bias=True)
+    )
+    (flatten_vis): Flatten(start_dim=1, end_dim=-1)
+    (linear): Linear(in_features=1000, out_features=2, bias=True)
+    (dropout): Dropout(p=0.5, inplace=False)
+  )
+)
+INFO:root:
+=================================================
+INFO:root:Training iteration 0
+INFO:root:Finished 100 / 426 batches with loss: 0.024384501650929452, accuracy 0.6290625
+INFO:root:Finished 200 / 426 batches with loss: 0.02132814882323146, accuracy 0.67
+INFO:root:Finished 300 / 426 batches with loss: 0.020081556234508753, accuracy 0.6759375
+INFO:root:Finished 400 / 426 batches with loss: 0.019774467442184685, accuracy 0.6803125
+INFO:root:=============Iteration 0=============
+INFO:root:Training accuracy 0.6654174015285126
+INFO:root:Avg Training loss 0.021317467124128537
+INFO:root:Micro F1: 0.6654
+INFO:root:Macro F1: 0.6401
+INFO:root:Weighted F1: 0.6617
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6969155118462226
+INFO:root:Dev set loss 0.01850208368320576
+INFO:root:Micro F1: 0.6969
+INFO:root:Macro F1: 0.6876
+INFO:root:Weighted F1: 0.7015
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7121144389807779
+INFO:root:Micro F1: 0.7121
+INFO:root:Macro F1: 0.7043
+INFO:root:Weighted F1: 0.7152
+INFO:root:Training iteration 1
+INFO:root:Finished 100 / 426 batches with loss: 0.01769829200580716, accuracy 0.7234375
+INFO:root:Finished 200 / 426 batches with loss: 0.01696351483464241, accuracy 0.7265625
+INFO:root:Finished 300 / 426 batches with loss: 0.01713299629278481, accuracy 0.7234375
+INFO:root:Finished 400 / 426 batches with loss: 0.01698810566216707, accuracy 0.7321875
+INFO:root:=============Iteration 1=============
+INFO:root:Training accuracy 0.7261904761904762
+INFO:root:Avg Training loss 0.017194886715411438
+INFO:root:Micro F1: 0.7262
+INFO:root:Macro F1: 0.7064
+INFO:root:Weighted F1: 0.7236
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.7067501117568171
+INFO:root:Dev set loss 0.0175949830560211
+INFO:root:Micro F1: 0.7068
+INFO:root:Macro F1: 0.6865
+INFO:root:Weighted F1: 0.7070
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7116674117121145
+INFO:root:Micro F1: 0.7117
+INFO:root:Macro F1: 0.6933
+INFO:root:Weighted F1: 0.7104
+INFO:root:Training iteration 2
+INFO:root:Finished 100 / 426 batches with loss: 0.015081899287179113, accuracy 0.7696875
+INFO:root:Finished 200 / 426 batches with loss: 0.014361147861927747, accuracy 0.7740625
+INFO:root:Finished 300 / 426 batches with loss: 0.014399615712463856, accuracy 0.77125
+INFO:root:Finished 400 / 426 batches with loss: 0.014388217255473137, accuracy 0.779375
+INFO:root:=============Iteration 2=============
+INFO:root:Training accuracy 0.7749118165784833
+INFO:root:Avg Training loss 0.014539579432162027
+INFO:root:Micro F1: 0.7749
+INFO:root:Macro F1: 0.7610
+INFO:root:Weighted F1: 0.7740
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.7107733571747876
+INFO:root:Dev set loss 0.018412013391218496
+INFO:root:Micro F1: 0.7108
+INFO:root:Macro F1: 0.6880
+INFO:root:Weighted F1: 0.7098
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7139025480554314
+INFO:root:Micro F1: 0.7139
+INFO:root:Macro F1: 0.6957
+INFO:root:Weighted F1: 0.7126
+INFO:root:Training iteration 3
+INFO:root:Finished 100 / 426 batches with loss: 0.012112980890087784, accuracy 0.816875
+INFO:root:Finished 200 / 426 batches with loss: 0.011242547915317118, accuracy 0.8353125
+INFO:root:Finished 300 / 426 batches with loss: 0.010911378981545568, accuracy 0.844375
+INFO:root:Finished 400 / 426 batches with loss: 0.010270784648600966, accuracy 0.85875
+INFO:root:=============Iteration 3=============
+INFO:root:Training accuracy 0.8397266313932981
+INFO:root:Avg Training loss 0.011081243150137685
+INFO:root:Micro F1: 0.8397
+INFO:root:Macro F1: 0.8310
+INFO:root:Weighted F1: 0.8397
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.70317389360751
+INFO:root:Dev set loss 0.022103308285780127
+INFO:root:Micro F1: 0.7032
+INFO:root:Macro F1: 0.6777
+INFO:root:Weighted F1: 0.7011
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7152436298614215
+INFO:root:Micro F1: 0.7152
+INFO:root:Macro F1: 0.6962
+INFO:root:Weighted F1: 0.7135
+INFO:root:Training iteration 4
+INFO:root:Finished 100 / 426 batches with loss: 0.008438730002380908, accuracy 0.8875
+INFO:root:Finished 200 / 426 batches with loss: 0.006652907696552575, accuracy 0.9171875
+INFO:root:Finished 300 / 426 batches with loss: 0.005726710432209074, accuracy 0.9309375
+INFO:root:Finished 400 / 426 batches with loss: 0.00504727001185529, accuracy 0.938125
+INFO:root:=============Iteration 4=============
+INFO:root:Training accuracy 0.9196796002351558
+INFO:root:Avg Training loss 0.006381679090043242
+INFO:root:Micro F1: 0.9197
+INFO:root:Macro F1: 0.9156
+INFO:root:Weighted F1: 0.9198
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6982565936522128
+INFO:root:Dev set loss 0.03019553159143331
+INFO:root:Micro F1: 0.6983
+INFO:root:Macro F1: 0.6737
+INFO:root:Weighted F1: 0.6968
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7009387572641931
+INFO:root:Micro F1: 0.7009
+INFO:root:Macro F1: 0.6817
+INFO:root:Weighted F1: 0.6995
+INFO:root:Training iteration 5
+INFO:root:Finished 100 / 426 batches with loss: 0.0038352760078851134, accuracy 0.9534375
+INFO:root:Finished 200 / 426 batches with loss: 0.0026695810805540533, accuracy 0.9725
+INFO:root:Finished 300 / 426 batches with loss: 0.0025585063791368156, accuracy 0.9725
+INFO:root:Finished 400 / 426 batches with loss: 0.001875850906362757, accuracy 0.9821875
+INFO:root:=============Iteration 5=============
+INFO:root:Training accuracy 0.9711934156378601
+INFO:root:Avg Training loss 0.002668920877569742
+INFO:root:Micro F1: 0.9712
+INFO:root:Macro F1: 0.9697
+INFO:root:Weighted F1: 0.9712
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6987036209208761
+INFO:root:Dev set loss 0.03526813008980288
+INFO:root:Micro F1: 0.6987
+INFO:root:Macro F1: 0.6783
+INFO:root:Weighted F1: 0.6992
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.6937863209655789
+INFO:root:Micro F1: 0.6938
+INFO:root:Macro F1: 0.6769
+INFO:root:Weighted F1: 0.6937
+INFO:root:Training iteration 6
+INFO:root:Finished 100 / 426 batches with loss: 0.0014975491364020855, accuracy 0.9878125
+INFO:root:Finished 200 / 426 batches with loss: 0.0014155826100613921, accuracy 0.9890625
+INFO:root:Finished 300 / 426 batches with loss: 0.001205440176418051, accuracy 0.9915625
+INFO:root:Finished 400 / 426 batches with loss: 0.0009916998841799796, accuracy 0.991875
+INFO:root:=============Iteration 6=============
+INFO:root:Training accuracy 0.9902998236331569
+INFO:root:Avg Training loss 0.0012527238949914317
+INFO:root:Micro F1: 0.9903
+INFO:root:Macro F1: 0.9898
+INFO:root:Weighted F1: 0.9903
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.7013857845328565
+INFO:root:Dev set loss 0.04094178475702667
+INFO:root:Micro F1: 0.7014
+INFO:root:Macro F1: 0.6791
+INFO:root:Weighted F1: 0.7009
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7004917299955298
+INFO:root:Micro F1: 0.7005
+INFO:root:Macro F1: 0.6816
+INFO:root:Weighted F1: 0.6992
+INFO:root:Training iteration 7
+INFO:root:Finished 100 / 426 batches with loss: 0.0009027562860865146, accuracy 0.9915625
+INFO:root:Finished 200 / 426 batches with loss: 0.0008227661752607673, accuracy 0.99375
+INFO:root:Finished 300 / 426 batches with loss: 0.0008278514177072794, accuracy 0.991875
+INFO:root:Finished 400 / 426 batches with loss: 0.0006087215628940612, accuracy 0.995625
+INFO:root:=============Iteration 7=============
+INFO:root:Training accuracy 0.9931657848324515
+INFO:root:Avg Training loss 0.000784834484946966
+INFO:root:Micro F1: 0.9932
+INFO:root:Macro F1: 0.9928
+INFO:root:Weighted F1: 0.9932
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6991506481895395
+INFO:root:Dev set loss 0.045904033835252905
+INFO:root:Micro F1: 0.6992
+INFO:root:Macro F1: 0.6748
+INFO:root:Weighted F1: 0.6978
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.6982565936522128
+INFO:root:Micro F1: 0.6983
+INFO:root:Macro F1: 0.6802
+INFO:root:Weighted F1: 0.6975
+INFO:root:Training iteration 8
+INFO:root:Finished 100 / 426 batches with loss: 0.000921378507046029, accuracy 0.991875
+INFO:root:Finished 200 / 426 batches with loss: 0.0010356399009469896, accuracy 0.98875
+INFO:root:Finished 300 / 426 batches with loss: 0.0010255636065267027, accuracy 0.988125
+INFO:root:Finished 400 / 426 batches with loss: 0.0006467966933269054, accuracy 0.9946875
+INFO:root:=============Iteration 8=============
+INFO:root:Training accuracy 0.9911816578483245
+INFO:root:Avg Training loss 0.0008852863665133592
+INFO:root:Micro F1: 0.9912
+INFO:root:Macro F1: 0.9907
+INFO:root:Weighted F1: 0.9912
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6946803755029056
+INFO:root:Dev set loss 0.043469857133068994
+INFO:root:Micro F1: 0.6947
+INFO:root:Macro F1: 0.6756
+INFO:root:Weighted F1: 0.6959
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7085382208314707
+INFO:root:Micro F1: 0.7085
+INFO:root:Macro F1: 0.6938
+INFO:root:Weighted F1: 0.7091
+INFO:root:Training iteration 9
+INFO:root:Finished 100 / 426 batches with loss: 0.000593835721956566, accuracy 0.995
+INFO:root:Finished 200 / 426 batches with loss: 0.0005518832732923329, accuracy 0.996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0006328619329724461, accuracy 0.9959375
+INFO:root:Finished 400 / 426 batches with loss: 0.00037736357538960876, accuracy 0.9984375
+INFO:root:=============Iteration 9=============
+INFO:root:Training accuracy 0.9966931216931217
+INFO:root:Avg Training loss 0.0005296561420774159
+INFO:root:Micro F1: 0.9967
+INFO:root:Macro F1: 0.9965
+INFO:root:Weighted F1: 0.9967
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6919982118909254
+INFO:root:Dev set loss 0.04392386715114783
+INFO:root:Micro F1: 0.6920
+INFO:root:Macro F1: 0.6732
+INFO:root:Weighted F1: 0.6934
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7094322753687975
+INFO:root:Micro F1: 0.7094
+INFO:root:Macro F1: 0.6941
+INFO:root:Weighted F1: 0.7097
+INFO:root:Training iteration 10
+INFO:root:Finished 100 / 426 batches with loss: 0.00040361953899264335, accuracy 0.9978125
+INFO:root:Finished 200 / 426 batches with loss: 0.00042167606414295734, accuracy 0.9975
+INFO:root:Finished 300 / 426 batches with loss: 0.00045252655982039867, accuracy 0.998125
+INFO:root:Finished 400 / 426 batches with loss: 0.0003733627777546644, accuracy 0.998125
+INFO:root:=============Iteration 10=============
+INFO:root:Training accuracy 0.9979423868312757
+INFO:root:Avg Training loss 0.00040706294588197125
+INFO:root:Micro F1: 0.9979
+INFO:root:Macro F1: 0.9978
+INFO:root:Weighted F1: 0.9979
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6919982118909254
+INFO:root:Dev set loss 0.04454125946901396
+INFO:root:Micro F1: 0.6920
+INFO:root:Macro F1: 0.6734
+INFO:root:Weighted F1: 0.6935
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7089852481001341
+INFO:root:Micro F1: 0.7090
+INFO:root:Macro F1: 0.6943
+INFO:root:Weighted F1: 0.7096
+INFO:root:Training iteration 11
+INFO:root:Finished 100 / 426 batches with loss: 0.00030758028035052123, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.0003867308236658573, accuracy 0.998125
+INFO:root:Finished 300 / 426 batches with loss: 0.0003525351197458804, accuracy 0.998125
+INFO:root:Finished 400 / 426 batches with loss: 0.0003288955648895353, accuracy 0.9978125
+INFO:root:=============Iteration 11=============
+INFO:root:Training accuracy 0.9983833039388595
+INFO:root:Avg Training loss 0.00034174680472217467
+INFO:root:Micro F1: 0.9984
+INFO:root:Macro F1: 0.9983
+INFO:root:Weighted F1: 0.9984
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6960214573088959
+INFO:root:Dev set loss 0.04485450623074865
+INFO:root:Micro F1: 0.6960
+INFO:root:Macro F1: 0.6768
+INFO:root:Weighted F1: 0.6971
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7036209208761735
+INFO:root:Micro F1: 0.7036
+INFO:root:Macro F1: 0.6879
+INFO:root:Weighted F1: 0.7038
+INFO:root:Training iteration 12
+INFO:root:Finished 100 / 426 batches with loss: 0.0002846234454773366, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002789970871526748, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00032260624459013343, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00026750071090646087, accuracy 0.9996875
+INFO:root:=============Iteration 12=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.0002854674551384124
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6924452391595888
+INFO:root:Dev set loss 0.04537308173463128
+INFO:root:Micro F1: 0.6924
+INFO:root:Macro F1: 0.6747
+INFO:root:Weighted F1: 0.6943
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.707644166294144
+INFO:root:Micro F1: 0.7076
+INFO:root:Macro F1: 0.6931
+INFO:root:Weighted F1: 0.7083
+INFO:root:Training iteration 13
+INFO:root:Finished 100 / 426 batches with loss: 0.0002463574905414134, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00029944023699499665, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00026037793373689055, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00021170901018194855, accuracy 1.0
+INFO:root:=============Iteration 13=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.0002517133369726479
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.045786988458091996
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6766
+INFO:root:Weighted F1: 0.6961
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7080911935628074
+INFO:root:Micro F1: 0.7081
+INFO:root:Macro F1: 0.6942
+INFO:root:Weighted F1: 0.7091
+INFO:root:Training iteration 14
+INFO:root:Finished 100 / 426 batches with loss: 0.0002507790387608111, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.0002830717293545604, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00025785608682781457, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.0001932203385513276, accuracy 0.9990625
+INFO:root:=============Iteration 14=============
+INFO:root:Training accuracy 0.9993386243386243
+INFO:root:Avg Training loss 0.00024037008260818595
+INFO:root:Micro F1: 0.9993
+INFO:root:Macro F1: 0.9993
+INFO:root:Weighted F1: 0.9993
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6946803755029056
+INFO:root:Dev set loss 0.045774459279324255
+INFO:root:Micro F1: 0.6947
+INFO:root:Macro F1: 0.6768
+INFO:root:Weighted F1: 0.6964
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.707644166294144
+INFO:root:Micro F1: 0.7076
+INFO:root:Macro F1: 0.6936
+INFO:root:Weighted F1: 0.7085
+INFO:root:Training iteration 15
+INFO:root:Finished 100 / 426 batches with loss: 0.0002447234489955008, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002736973762512207, accuracy 0.99875
+INFO:root:Finished 300 / 426 batches with loss: 0.00023272791760973633, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.0001872363209258765, accuracy 0.9996875
+INFO:root:=============Iteration 15=============
+INFO:root:Training accuracy 0.9994121105232217
+INFO:root:Avg Training loss 0.00023280324875379855
+INFO:root:Micro F1: 0.9994
+INFO:root:Macro F1: 0.9994
+INFO:root:Weighted F1: 0.9994
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.0458260863606398
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6763
+INFO:root:Weighted F1: 0.6959
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7085382208314707
+INFO:root:Micro F1: 0.7085
+INFO:root:Macro F1: 0.6947
+INFO:root:Weighted F1: 0.7095
+INFO:root:Training iteration 16
+INFO:root:Finished 100 / 426 batches with loss: 0.0002340065676253289, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.0002388731692917645, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00025719492346979676, accuracy 0.9990625
+INFO:root:Finished 400 / 426 batches with loss: 0.00014617938082665206, accuracy 1.0
+INFO:root:=============Iteration 16=============
+INFO:root:Training accuracy 0.9995590828924162
+INFO:root:Avg Training loss 0.00021649855761178305
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.045879873917152904
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6761
+INFO:root:Weighted F1: 0.6959
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7098793026374609
+INFO:root:Micro F1: 0.7099
+INFO:root:Macro F1: 0.6960
+INFO:root:Weighted F1: 0.7108
+INFO:root:Training iteration 17
+INFO:root:Finished 100 / 426 batches with loss: 0.0002393744618166238, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002196737739723176, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.0002673646085895598, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001830320304725319, accuracy 1.0
+INFO:root:=============Iteration 17=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.0002280827521344867
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6933392936969155
+INFO:root:Dev set loss 0.04594072349166359
+INFO:root:Micro F1: 0.6933
+INFO:root:Macro F1: 0.6750
+INFO:root:Weighted F1: 0.6949
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7094322753687975
+INFO:root:Micro F1: 0.7094
+INFO:root:Macro F1: 0.6956
+INFO:root:Weighted F1: 0.7104
+INFO:root:Training iteration 18
+INFO:root:Finished 100 / 426 batches with loss: 0.00022284892038442193, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00024701839545741676, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002539909153711051, accuracy 0.9990625
+INFO:root:Finished 400 / 426 batches with loss: 0.00018118517007678747, accuracy 0.999375
+INFO:root:=============Iteration 18=============
+INFO:root:Training accuracy 0.9993386243386243
+INFO:root:Avg Training loss 0.0002254179390317058
+INFO:root:Micro F1: 0.9993
+INFO:root:Macro F1: 0.9993
+INFO:root:Weighted F1: 0.9993
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04598644203941472
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7107733571747876
+INFO:root:Micro F1: 0.7108
+INFO:root:Macro F1: 0.6969
+INFO:root:Weighted F1: 0.7117
+INFO:root:Training iteration 19
+INFO:root:Finished 100 / 426 batches with loss: 0.00022003950434736907, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002321550063788891, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002439450065139681, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00017289170646108686, accuracy 1.0
+INFO:root:=============Iteration 19=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00021638722924941572
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04604990705081699
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 20
+INFO:root:Finished 100 / 426 batches with loss: 0.00020176920341327787, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002395117608830333, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.0002139667933806777, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.0001912974542938173, accuracy 0.9996875
+INFO:root:=============Iteration 20=============
+INFO:root:Training accuracy 0.9995590828924162
+INFO:root:Avg Training loss 0.00021094220254059962
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04606136667659148
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 21
+INFO:root:Finished 100 / 426 batches with loss: 0.00022108461707830428, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002486965537536889, accuracy 0.9990625
+INFO:root:Finished 300 / 426 batches with loss: 0.0002519977814517915, accuracy 0.9990625
+INFO:root:Finished 400 / 426 batches with loss: 0.00018113058409653605, accuracy 0.9996875
+INFO:root:=============Iteration 21=============
+INFO:root:Training accuracy 0.9994121105232217
+INFO:root:Avg Training loss 0.00022194547790033126
+INFO:root:Micro F1: 0.9994
+INFO:root:Macro F1: 0.9994
+INFO:root:Weighted F1: 0.9994
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046065159978001154
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 22
+INFO:root:Finished 100 / 426 batches with loss: 0.00021235865540802478, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00022330538718961178, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002260899799875915, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00019491017796099185, accuracy 0.999375
+INFO:root:=============Iteration 22=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.0002130526443751751
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.0460734205103155
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 23
+INFO:root:Finished 100 / 426 batches with loss: 0.00021080381236970424, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00023792923195287586, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002330723183695227, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.0001594316540285945, accuracy 1.0
+INFO:root:=============Iteration 23=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020730595894460116
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04607693547908355
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 24
+INFO:root:Finished 100 / 426 batches with loss: 0.00020796922268345952, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00023402452818118035, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00024168218835256993, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018290823558345437, accuracy 1.0
+INFO:root:=============Iteration 24=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00021490909658516947
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046083062554130506
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 25
+INFO:root:Finished 100 / 426 batches with loss: 0.0002084308722987771, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00021320021827705204, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00020612837630324066, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00019021766842342914, accuracy 1.0
+INFO:root:=============Iteration 25=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.0002034623011605029
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04608895963038725
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 26
+INFO:root:Finished 100 / 426 batches with loss: 0.00021540746558457613, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00022626071819104254, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.000248928900109604, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00019517029635608197, accuracy 0.999375
+INFO:root:=============Iteration 26=============
+INFO:root:Training accuracy 0.9994855967078189
+INFO:root:Avg Training loss 0.00022123052575995052
+INFO:root:Micro F1: 0.9995
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9995
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04608780340152923
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 27
+INFO:root:Finished 100 / 426 batches with loss: 0.00020126291550695896, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00024013205431401728, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00026858355035074054, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.0001787809655070305, accuracy 1.0
+INFO:root:=============Iteration 27=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00021964583167043033
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609110854169755
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 28
+INFO:root:Finished 100 / 426 batches with loss: 0.00021115787443704904, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00020918938680551945, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00023279412533156574, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00017354025272652506, accuracy 1.0
+INFO:root:=============Iteration 28=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.00020531361905101256
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609210519424015
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 29
+INFO:root:Finished 100 / 426 batches with loss: 0.00024027638137340545, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00022175750113092362, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.0002758777374401689, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00018112867139279842, accuracy 1.0
+INFO:root:=============Iteration 29=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00022762617220043225
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.0460917216941721
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 30
+INFO:root:Finished 100 / 426 batches with loss: 0.0002093582961242646, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00019266045070253312, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00025259544025175274, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00017835021251812576, accuracy 1.0
+INFO:root:=============Iteration 30=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.0002067041000803557
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.0460903154562028
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 31
+INFO:root:Finished 100 / 426 batches with loss: 0.00019132582587189973, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00021204413147643208, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00021337997866794468, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001689089392311871, accuracy 1.0
+INFO:root:=============Iteration 31=============
+INFO:root:Training accuracy 1.0
+INFO:root:Avg Training loss 0.0001945648488009908
+INFO:root:Micro F1: 1.0000
+INFO:root:Macro F1: 1.0000
+INFO:root:Weighted F1: 1.0000
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091901547257584
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 32
+INFO:root:Finished 100 / 426 batches with loss: 0.00020578558440320193, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00024801845662295816, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002130607236176729, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018320414004847408, accuracy 0.9996875
+INFO:root:=============Iteration 32=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00021003840271074725
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609274363272628
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 33
+INFO:root:Finished 100 / 426 batches with loss: 0.0001955609710421413, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002057005965616554, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.0002344309620093554, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00017788831843063235, accuracy 1.0
+INFO:root:=============Iteration 33=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.0002015797004677456
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609147776009837
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 34
+INFO:root:Finished 100 / 426 batches with loss: 0.00022225635359063745, accuracy 0.9990625
+INFO:root:Finished 200 / 426 batches with loss: 0.00021236791159026324, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00021472686668857932, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018210122012533248, accuracy 1.0
+INFO:root:=============Iteration 34=============
+INFO:root:Training accuracy 0.9995590828924162
+INFO:root:Avg Training loss 0.00021181714423723532
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609152241695338
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 35
+INFO:root:Finished 100 / 426 batches with loss: 0.00019885777146555483, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00023696392541751267, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00025055438396520913, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00017260557506233455, accuracy 1.0
+INFO:root:=============Iteration 35=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00021078462834562504
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.0460921625873581
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 36
+INFO:root:Finished 100 / 426 batches with loss: 0.00020718682440929115, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00018357516382820903, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00022265282575972378, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00019173315376974642, accuracy 0.9996875
+INFO:root:=============Iteration 36=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00020021230430243157
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609136875580611
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 37
+INFO:root:Finished 100 / 426 batches with loss: 0.00021211972925812007, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00021447091945447027, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00022903820150531828, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00017575552803464234, accuracy 1.0
+INFO:root:=============Iteration 37=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00020614300259355584
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092388376253866
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 38
+INFO:root:Finished 100 / 426 batches with loss: 0.00022032551583833993, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00021533008432015778, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00022812829236499966, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001537949894554913, accuracy 1.0
+INFO:root:=============Iteration 38=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.0002041498852290349
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609255815756657
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 39
+INFO:root:Finished 100 / 426 batches with loss: 0.00024087625788524747, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00022152390331029893, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00024224486202001572, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00017384417238645256, accuracy 1.0
+INFO:root:=============Iteration 39=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00021727498251723583
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609177612970597
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 40
+INFO:root:Finished 100 / 426 batches with loss: 0.00020306215854361652, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00021533796680159867, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002541144785936922, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00018044729600660503, accuracy 0.9996875
+INFO:root:=============Iteration 40=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00021336758963715532
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609198611817511
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 41
+INFO:root:Finished 100 / 426 batches with loss: 0.00021573298377916217, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00021655270829796792, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00021357859950512647, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00017775014974176883, accuracy 1.0
+INFO:root:=============Iteration 41=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.0002029276784752517
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609080470988513
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 42
+INFO:root:Finished 100 / 426 batches with loss: 0.00018491965136490762, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00022964548086747526, accuracy 0.9990625
+INFO:root:Finished 300 / 426 batches with loss: 0.00023378646583296358, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00016251418506726622, accuracy 1.0
+INFO:root:=============Iteration 42=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00020044703619102392
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609240769380749
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 43
+INFO:root:Finished 100 / 426 batches with loss: 0.00020605623605661095, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00019109492655843495, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00023563595488667487, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.0001867740019224584, accuracy 0.9990625
+INFO:root:=============Iteration 43=============
+INFO:root:Training accuracy 0.9994855967078189
+INFO:root:Avg Training loss 0.00020157131801705933
+INFO:root:Micro F1: 0.9995
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9995
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609268981002514
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 44
+INFO:root:Finished 100 / 426 batches with loss: 0.0001985607878305018, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00020890286890789866, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.0002444409916643053, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00018015156500041484, accuracy 1.0
+INFO:root:=============Iteration 44=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.000207323468739779
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609320720072351
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 45
+INFO:root:Finished 100 / 426 batches with loss: 0.00019687763415277004, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00022642903262749315, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00022811569389887153, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.0001667654502671212, accuracy 1.0
+INFO:root:=============Iteration 45=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.0002015529650491802
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609245099177252
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 46
+INFO:root:Finished 100 / 426 batches with loss: 0.00020875292597338557, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002114271151367575, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00021691262372769415, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018243897473439575, accuracy 1.0
+INFO:root:=============Iteration 46=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.00020301037866059365
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609166797805056
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 47
+INFO:root:Finished 100 / 426 batches with loss: 0.00021469207364134492, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002207033906597644, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00023780358140356838, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00015692709595896304, accuracy 1.0
+INFO:root:=============Iteration 47=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020619458313604302
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092332102221786
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 48
+INFO:root:Finished 100 / 426 batches with loss: 0.00018690717639401554, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00021100955666042865, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00023317175917327403, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018559365649707617, accuracy 0.9996875
+INFO:root:=============Iteration 48=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.00020225549106875424
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091663501707104
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 49
+INFO:root:Finished 100 / 426 batches with loss: 0.00020757700549438595, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00020376943750306963, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002257825352717191, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00017147415317595005, accuracy 0.999375
+INFO:root:=============Iteration 49=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00019809957358248088
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091591373958594
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 50
+INFO:root:Finished 100 / 426 batches with loss: 0.0001925680215936154, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00021167116821743548, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.0002341739647090435, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00019128067535348236, accuracy 1.0
+INFO:root:=============Iteration 50=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00020459390763874477
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609197625956154
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 51
+INFO:root:Finished 100 / 426 batches with loss: 0.0002129565179347992, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.0002131496707443148, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00026282106642611325, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00018391708959825337, accuracy 1.0
+INFO:root:=============Iteration 51=============
+INFO:root:Training accuracy 0.9995590828924162
+INFO:root:Avg Training loss 0.00021671917019023187
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092140791828634
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 52
+INFO:root:Finished 100 / 426 batches with loss: 0.0002016867557540536, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00021025846828706562, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00021190045517869294, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00019040610291995108, accuracy 0.9996875
+INFO:root:=============Iteration 52=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020157453220234696
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091288368138125
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 53
+INFO:root:Finished 100 / 426 batches with loss: 0.00021544616320170462, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002054605376906693, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00023625994566828012, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00015147138154134154, accuracy 1.0
+INFO:root:=============Iteration 53=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00020088586514965706
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609243758938704
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 54
+INFO:root:Finished 100 / 426 batches with loss: 0.0002045177575200796, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00022296592243947088, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00023503473494201899, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.0001597849919926375, accuracy 1.0
+INFO:root:=============Iteration 54=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020535970172422694
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609239956711252
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 55
+INFO:root:Finished 100 / 426 batches with loss: 0.0001917412015609443, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00023312409175559878, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00025089254369959236, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00018613785156048834, accuracy 1.0
+INFO:root:=============Iteration 55=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00021556653996720375
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609175390785807
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 56
+INFO:root:Finished 100 / 426 batches with loss: 0.00022507985588163137, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.0001998376566916704, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00023732964997179805, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00017950923298485578, accuracy 1.0
+INFO:root:=============Iteration 56=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.0002083979905098414
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092111882110445
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 57
+INFO:root:Finished 100 / 426 batches with loss: 0.00019418651121668517, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00020232603535987436, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.0002196562825702131, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00015672318870201706, accuracy 1.0
+INFO:root:=============Iteration 57=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.00019221321905775324
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091807330885685
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 58
+INFO:root:Finished 100 / 426 batches with loss: 0.00022058244445361197, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00020599295385181904, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00025672334362752735, accuracy 0.9990625
+INFO:root:Finished 400 / 426 batches with loss: 0.00018996846745721995, accuracy 1.0
+INFO:root:=============Iteration 58=============
+INFO:root:Training accuracy 0.9995590828924162
+INFO:root:Avg Training loss 0.00021876613371323865
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609139009837226
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 59
+INFO:root:Finished 100 / 426 batches with loss: 0.00020061676972545683, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002162837446667254, accuracy 0.9990625
+INFO:root:Finished 300 / 426 batches with loss: 0.0002494613535236567, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.0001788842352107167, accuracy 1.0
+INFO:root:=============Iteration 59=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00021148201703438332
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609238046271811
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 60
+INFO:root:Finished 100 / 426 batches with loss: 0.000233521715272218, accuracy 0.99875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002640407346189022, accuracy 0.9990625
+INFO:root:Finished 300 / 426 batches with loss: 0.00024968333658762274, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001712909631896764, accuracy 1.0
+INFO:root:=============Iteration 60=============
+INFO:root:Training accuracy 0.9994855967078189
+INFO:root:Avg Training loss 0.00022718820858884741
+INFO:root:Micro F1: 0.9995
+INFO:root:Macro F1: 0.9995
+INFO:root:Weighted F1: 0.9995
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092727912234364
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 61
+INFO:root:Finished 100 / 426 batches with loss: 0.00020661569898948074, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002205898507963866, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00023652655538171529, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00020370635786093772, accuracy 0.999375
+INFO:root:=============Iteration 61=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00021543389740348001
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609297392461041
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 62
+INFO:root:Finished 100 / 426 batches with loss: 0.00019639688543975352, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002151342574506998, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00021680432371795177, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001983939134515822, accuracy 0.999375
+INFO:root:=============Iteration 62=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.0002048984616184536
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091822811573493
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 63
+INFO:root:Finished 100 / 426 batches with loss: 0.00020229609683156013, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002140292327385396, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00023039144347421824, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001974149770103395, accuracy 1.0
+INFO:root:=============Iteration 63=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.00020925827715315937
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609163826898533
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 64
+INFO:root:Finished 100 / 426 batches with loss: 0.00019401965546421706, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00019694657064974307, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00023627772694453597, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00019157188246026635, accuracy 1.0
+INFO:root:=============Iteration 64=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.0002037465275604188
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609167703731709
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 65
+INFO:root:Finished 100 / 426 batches with loss: 0.0002146245096810162, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00019654052099213004, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00021469589206390082, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00019271348952315748, accuracy 0.9996875
+INFO:root:=============Iteration 65=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.0002037641892909373
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609194769622707
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 66
+INFO:root:Finished 100 / 426 batches with loss: 0.00021874525817111134, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00021310246200300753, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00023073568823747337, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00016747103538364172, accuracy 1.0
+INFO:root:=============Iteration 66=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020652038014019186
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609218808652889
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 67
+INFO:root:Finished 100 / 426 batches with loss: 0.00019341294304467738, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002218563959468156, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.0002300863538403064, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00016585351433604957, accuracy 1.0
+INFO:root:=============Iteration 67=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00020084863661107844
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609149777041944
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 68
+INFO:root:Finished 100 / 426 batches with loss: 0.00020562571240589022, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002002920478116721, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00025210875784978273, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.000183112274389714, accuracy 1.0
+INFO:root:=============Iteration 68=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.0002089866994387924
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609135580638396
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 69
+INFO:root:Finished 100 / 426 batches with loss: 0.00019849455798976124, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002162204240448773, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.0002416417992208153, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.0001751342718489468, accuracy 0.9996875
+INFO:root:=============Iteration 69=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00020513463456584452
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092471188607896
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 70
+INFO:root:Finished 100 / 426 batches with loss: 0.00021944507258012892, accuracy 0.9990625
+INFO:root:Finished 200 / 426 batches with loss: 0.00021308508585207164, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00022016921662725507, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00016722247120924295, accuracy 1.0
+INFO:root:=============Iteration 70=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00020498267458702522
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609181084801269
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 71
+INFO:root:Finished 100 / 426 batches with loss: 0.00020165673340670763, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.000210423773387447, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00019936695694923402, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.0001867896062321961, accuracy 1.0
+INFO:root:=============Iteration 71=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00020107155888046257
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091971943087486
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 72
+INFO:root:Finished 100 / 426 batches with loss: 0.0002232044388074428, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00019490232807584107, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00022492339718155563, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.0001756640733219683, accuracy 0.9996875
+INFO:root:=============Iteration 72=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020147712960366218
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092357441523166
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 73
+INFO:root:Finished 100 / 426 batches with loss: 0.00018838199321180582, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00022719392436556518, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.0002303887321613729, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018329867045395077, accuracy 0.9996875
+INFO:root:=============Iteration 73=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.0002051167259061778
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609227694727557
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 74
+INFO:root:Finished 100 / 426 batches with loss: 0.00022939856629818677, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.0002309180179145187, accuracy 0.9990625
+INFO:root:Finished 300 / 426 batches with loss: 0.00022867543739266694, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018458187812939286, accuracy 1.0
+INFO:root:=============Iteration 74=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.000215101003513257
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609218744705125
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 75
+INFO:root:Finished 100 / 426 batches with loss: 0.00020596579648554325, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00021515220636501907, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002104116918053478, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001742579520214349, accuracy 0.9996875
+INFO:root:=============Iteration 75=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00019703558599603728
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092167276860774
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 76
+INFO:root:Finished 100 / 426 batches with loss: 0.00018811900285072624, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002256811468396336, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00022822543163783849, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.0001917595008853823, accuracy 1.0
+INFO:root:=============Iteration 76=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.00020995800071853108
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092965451531714
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 77
+INFO:root:Finished 100 / 426 batches with loss: 0.00021612740238197148, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00022150154458358884, accuracy 0.9990625
+INFO:root:Finished 300 / 426 batches with loss: 0.00022944121272303164, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00016814270289614797, accuracy 1.0
+INFO:root:=============Iteration 77=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00020661579991424175
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609221752914511
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 78
+INFO:root:Finished 100 / 426 batches with loss: 0.00022848799475468694, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00022721826913766564, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002074195898603648, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00018101515946909784, accuracy 1.0
+INFO:root:=============Iteration 78=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020957397743796757
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091408776448246
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 79
+INFO:root:Finished 100 / 426 batches with loss: 0.00020615043467842042, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.0002543178922496736, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00024063838878646493, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00019785032491199673, accuracy 0.99875
+INFO:root:=============Iteration 79=============
+INFO:root:Training accuracy 0.9993386243386243
+INFO:root:Avg Training loss 0.0002235951028580283
+INFO:root:Micro F1: 0.9993
+INFO:root:Macro F1: 0.9993
+INFO:root:Weighted F1: 0.9993
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609316142478264
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 80
+INFO:root:Finished 100 / 426 batches with loss: 0.00020399768371134997, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002244441898074001, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00022776893922127784, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.000184386579785496, accuracy 1.0
+INFO:root:=============Iteration 80=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.00020796265004138117
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609239980691664
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 81
+INFO:root:Finished 100 / 426 batches with loss: 0.00020656615612097085, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00022514713811688124, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002296634844969958, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00018352304003201424, accuracy 0.9996875
+INFO:root:=============Iteration 81=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00021252172590090484
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091461346839016
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 82
+INFO:root:Finished 100 / 426 batches with loss: 0.00019780608359724284, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.0002257020224351436, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.0002401070261839777, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00016543120727874339, accuracy 0.9996875
+INFO:root:=============Iteration 82=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020573622323156524
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609248634955688
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 83
+INFO:root:Finished 100 / 426 batches with loss: 0.0002122421597596258, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002264568186365068, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00024873653543181715, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00017574248951859772, accuracy 0.999375
+INFO:root:=============Iteration 83=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00021560195869580568
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046091850868654825
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 84
+INFO:root:Finished 100 / 426 batches with loss: 0.00019178570713847875, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.0002380183490458876, accuracy 0.999375
+INFO:root:Finished 300 / 426 batches with loss: 0.00023892118944786488, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00017937057767994702, accuracy 0.9996875
+INFO:root:=============Iteration 84=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00021356844651495828
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092918849598895
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 85
+INFO:root:Finished 100 / 426 batches with loss: 0.0001728529727552086, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.00021950265276245772, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00021677501150406896, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00017179684014990927, accuracy 1.0
+INFO:root:=============Iteration 85=============
+INFO:root:Training accuracy 0.9999265138154027
+INFO:root:Avg Training loss 0.00019661291337614198
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9999
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609198390664828
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 86
+INFO:root:Finished 100 / 426 batches with loss: 0.00022026799153536557, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00020173272816464304, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00024153834441676737, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.00017533996840938927, accuracy 1.0
+INFO:root:=============Iteration 86=============
+INFO:root:Training accuracy 0.9997795414462081
+INFO:root:Avg Training loss 0.00020705651670370224
+INFO:root:Micro F1: 0.9998
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9998
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.046092164745595125
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 87
+INFO:root:Finished 100 / 426 batches with loss: 0.00019377310876734556, accuracy 0.999375
+INFO:root:Finished 200 / 426 batches with loss: 0.00021108909277245402, accuracy 1.0
+INFO:root:Finished 300 / 426 batches with loss: 0.00021791858947835862, accuracy 0.9996875
+INFO:root:Finished 400 / 426 batches with loss: 0.0001736522582359612, accuracy 0.9996875
+INFO:root:=============Iteration 87=============
+INFO:root:Training accuracy 0.9997060552616108
+INFO:root:Avg Training loss 0.00019767816353157854
+INFO:root:Micro F1: 0.9997
+INFO:root:Macro F1: 0.9997
+INFO:root:Weighted F1: 0.9997
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.0460929926026864
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 88
+INFO:root:Finished 100 / 426 batches with loss: 0.00018997680279426277, accuracy 1.0
+INFO:root:Finished 200 / 426 batches with loss: 0.000207688023801893, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00021606475464068354, accuracy 1.0
+INFO:root:Finished 400 / 426 batches with loss: 0.00018923116731457413, accuracy 0.9996875
+INFO:root:=============Iteration 88=============
+INFO:root:Training accuracy 0.9998530276308054
+INFO:root:Avg Training loss 0.0002001585197393541
+INFO:root:Micro F1: 0.9999
+INFO:root:Macro F1: 0.9998
+INFO:root:Weighted F1: 0.9999
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609297624271685
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
+INFO:root:Training iteration 89
+INFO:root:Finished 100 / 426 batches with loss: 0.0001999073277693242, accuracy 0.9996875
+INFO:root:Finished 200 / 426 batches with loss: 0.00020831521251238883, accuracy 0.9996875
+INFO:root:Finished 300 / 426 batches with loss: 0.00022221084102056922, accuracy 0.999375
+INFO:root:Finished 400 / 426 batches with loss: 0.00017377976211719215, accuracy 0.9996875
+INFO:root:=============Iteration 89=============
+INFO:root:Training accuracy 0.9996325690770135
+INFO:root:Avg Training loss 0.00019913299232589924
+INFO:root:Micro F1: 0.9996
+INFO:root:Macro F1: 0.9996
+INFO:root:Weighted F1: 0.9996
+INFO:root:Saving model...
+INFO:root:done
+INFO:root:Calculating validation loss...
+INFO:root:Dev set accuracy 0.6942333482342423
+INFO:root:Dev set loss 0.04609297054070791
+INFO:root:Micro F1: 0.6942
+INFO:root:Macro F1: 0.6760
+INFO:root:Weighted F1: 0.6958
+INFO:root:======================================
+
+INFO:root:Test set accuracy 0.7103263299061243
+INFO:root:Micro F1: 0.7103
+INFO:root:Macro F1: 0.6965
+INFO:root:Weighted F1: 0.7113
