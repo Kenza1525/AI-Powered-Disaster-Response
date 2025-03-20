@@ -76,7 +76,7 @@ class CrisisMMDataset(BaseDataset):
     #         l = l.rstrip('\n')
     #         #	Generate final_text first from the wiki.py. Check the code of wiki.py and run according to the dataset.
 
-    #         event_name, tweet_id, image_id, tweet_text,	image,	label,	label_text, label_image, label_text_image,final_text = l.split(
+    #         event_name, tweet_id, image_id, tweet_text,  image,	label,	label_text, label_image, label_text_image,final_text = l.split(
     #             '\t')
 
     #         if self.consistent_only and label_text != label_image:

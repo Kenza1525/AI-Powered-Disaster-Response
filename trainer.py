@@ -229,9 +229,9 @@ class Trainer:
             all_labels.extend(y.cpu().numpy())
 
         dev_acc = correct / total
-        #dev_loss = total_loss / total
+        # dev_loss = total_loss / total
         logging.info("Test set accuracy {}".format(dev_acc))
-        #logging.info("Test set loss {}".format(dev_loss))
+        # logging.info("Test set loss {}".format(dev_loss))
 
         # Calculate micro, macro, and weighted F1 scores
         micro_f1 = f1_score(all_labels, all_predictions, average='micro')
