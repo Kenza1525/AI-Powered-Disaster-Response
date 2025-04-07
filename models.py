@@ -95,7 +95,7 @@ class DenseNetBertMMModel(MMModel):
         self.dim_visual_repr = dim_visual_repr
         self.dim_text_repr = dim_text_repr
 
-       
+    
         imageEncoder = torch.hub.load(
             'pytorch/vision:v0.8.0', 'densenet201', pretrained=True)
        

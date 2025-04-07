@@ -24,12 +24,14 @@ from base_dataset import expand2square
 
 from paths import dataroot
 
+#
 task_dict = {
     'task1': 'informative',
     'task2_full': 'humanitarian',
     'task2': 'humanitarian',
     'task3' : 'damage'
 }
+
 
 labels_task1 = {
     'informative': 1,
@@ -65,97 +67,44 @@ labels_task3 = {
 }
 
 class CrisisMMDataset(BaseDataset):
-
-    # def read_data(self, ann_file):
-    #     with open(ann_file, encoding='utf-8') as f:
-    #         self.info = f.readlines()[1:]
-
-    #     self.data_list = []
-
-    #     for l in self.info:
-    #         l = l.rstrip('\n')
-    #         #	Generate final_text first from the wiki.py. Check the code of wiki.py and run according to the dataset.
-
-    #         event_name, tweet_id, image_id, tweet_text,  image,	label,	label_text, label_image, label_text_image,final_text = l.split(
-    #             '\t')
-
-    #         if self.consistent_only and label_text != label_image:
-    #             continue
-    #         #print(trigger_words)
-    #         self.data_list.append(
-    #             {
-    #                 'path_image': '%s/%s' % (self.dataset_root, image),
-
-    #                 'text': final_text,
-    #                 'text_tokens': self.tokenize(final_text),
-
-    #                 'label_str': label,
-    #                 'label': self.label_map[label],
-
-    #                 'label_image_str': label,
-    #                 'label_image': self.label_map[label],
-
-    #                 'label_text_str': label,
-    #                 'label_text': self.label_map[label]
-    #             }
-    #         )
+    def __init__(self, opt, phase = 'train', cat= 'all', task = 'task2', shuffle = False, consistent_only = False):
+        self.initialize(opt, phase, cat, task, shuffle, consistent_only)
+        
     def read_data(self, ann_file):
         with open(ann_file, encoding='utf-8') as f:
-            self.info = f.readlines()[1:]  # Skip the header row
+            self.info = f.readlines()[1:]
 
         self.data_list = []
-
         for l in self.info:
             l = l.rstrip('\n')
-            fields = l.split('\t')
+            #	Generate final_text first from the wiki.py. Check the code of wiki.py and run according to the dataset.
+            event_name, tweet_id, image_id, tweet_text,  image,	label,	label_text, label_image, label_text_image = l.split(
+                '\t')
 
-            if len(fields) == 10:  # Standard format for Task 1 & Task 2
-                event_name, tweet_id, image_id, tweet_text, image, label, label_text, label_image, label_text_image, final_text = fields
-            elif len(fields) == 7:  # Format for Task 3
-                event_name, tweet_id, image_id, tweet_text, image, label, final_text = fields
-                # label_text, label_image, label_text_image = None, None, None  # Leave these as None for Task 3
-                label_text, label_image, label_text_image = "", "", ""  # Leave these as None for Task 3
-            else:
-                print(f"Unexpected number of fields ({len(fields)}) in file: {ann_file}")
-                continue  # Skip problematic lines
-
-            # self.data_list.append(
-            #     {
-            #         'path_image': f'{self.dataset_root}/{image}',
-            #         'text': final_text,
-            #         'text_tokens': self.tokenize(final_text),
-            #         'label_str': label,
-            #         'label': self.label_map[label],
-            #         'label_text_str': label_text,
-            #         'label_text': self.label_map[label] if label_text else "",  # Handle missing labels
-            #         'label_image_str': label_image,
-            #         'label_image': self.label_map[label] if label_image else "",
-            #         'label_text_image_str': label_text_image,
-            #         'label_text_image': self.label_map[label] if label_text_image else ""
-            #     }
-            # )
+            if self.consistent_only and label_text != label_image:
+                continue
+            #print(trigger_words)
             self.data_list.append(
-                    {
-                        'path_image': f'{self.dataset_root}/{image}',
-                        'text': final_text,
-                        'text_tokens': self.tokenize(final_text),
-                        'label_str': label,
-                        'label': torch.tensor(self.label_map[label], dtype=torch.long),  # Ensure label is tensor
-                        'label_text_str': label_text,
-                        'label_text': torch.tensor(self.label_map[label], dtype=torch.long) if label_text != "" else torch.tensor(self.label_map[label], dtype=torch.long),  # Convert to tensor
-                        'label_image_str': label_image,
-                        'label_image': torch.tensor(self.label_map[label], dtype=torch.long) if label_image != "" else torch.tensor(self.label_map[label], dtype=torch.long),
-                        'label_text_image_str': label_text_image,
-                        'label_text_image': torch.tensor(self.label_map[label], dtype=torch.long) if label_text_image != "" else torch.tensor(self.label_map[label], dtype=torch.long)
-                    }
-                )
+                {
+                    'path_image': '%s/%s' % (self.dataset_root, image),
 
+                    'text': tweet_text,
+                    'text_tokens': self.tokenize(tweet_text),
 
-    def tokenize(self, sentence):
+                    'label_str': label,
+                    'label': self.label_map[label],
+
+                    'label_image_str': label,
+                    'label_image': self.label_map[label],
+
+                    'label_text_str': label,
+                    'label_text': self.label_map[label]
+                }
+            )
+    def tokenize(self,sentence):
         ids = self.tokenizer(clean_text(
             sentence), padding='max_length', max_length=512, truncation=True).items()
         return {k: torch.tensor(v) for k, v in ids}
-
     def initialize(self, opt, phase='train', cat='all', task='task2', shuffle=False, consistent_only=False):
         self.opt = opt
         self.shuffle = shuffle
@@ -171,25 +120,24 @@ class CrisisMMDataset(BaseDataset):
             self.label_map = labels_task2
         elif task == 'task3':
             self.label_map = labels_task3
-
-        #self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-        #self.tokenizer = XLNetTokenizer.from_pretrained('xlnet-base-cased')
-        self.tokenizer = ElectraTokenizer.from_pretrained('google/electra-base-discriminator')
-        #self.tokenizer = AlbertTokenizer.from_pretrained('albert-base-v2')
+        ## TRY OUT BERT TOKENIZER !!!
+        self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        # The annotatef filr
         ann_file = '%s/crisismmd_datasplit_all/task_%s_text_img_%s.tsv' % (
-            self.dataset_root, task_dict[task], phase
-        )
-
-        # Append list of data to self.data_list
+        self.dataset_root, task_dict[task], phase)
+        
+        # Append list of data to the self.datalist
         self.read_data(ann_file)
-
+        
+        # Shuffle up the data
         if self.shuffle:
             np.random.default_rng(seed=0).shuffle(self.data_list)
         self.data_list = self.data_list[:self.opt.max_dataset_size]
         cprint('[*] %d samples loaded.' % (len(self.data_list)), 'yellow')
-
+        
         self.N = len(self.data_list)
-
+        
+        self.to_tensor = transforms.ToTensor()
         self.to_tensor = transforms.ToTensor()
         self.normalize = transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 
@@ -201,20 +149,19 @@ class CrisisMMDataset(BaseDataset):
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
         ])
-
-    def __getitem__(self, index):
+    def __getitem__(self,index):
+        '''single instance of my data'''
         data = self.data_list[index]
-
-        to_return = {}
-        for k, v in data.items():
+        to_return  = {}
+        for k,v in data.items(): # Text and Label
             to_return[k] = v
-
         with Image.open(data['path_image']).convert('RGB') as img:
             image = self.transforms(img)
         to_return['image'] = image
         return to_return
-
+    
     def __len__(self):
+        '''Len of the list of annotated dataset'''
         return len(self.data_list)
 
     def name(self):
